@@ -1,8 +1,6 @@
 from requests import request
 import json
 
-# player career
-
 print("------TESTING PLAYER CAREER------")
 
 players = ['1629029', '2544', '203507', '201142', '203999']
@@ -50,3 +48,6 @@ for team in teams:
         passed += 1
     else:
         print(f"Team {team} roster: \033[91mFAILED\033[0m")
+
+print(f"Player career test: {passed}/{len(players)} passed")
+print("------END TESTING PLAYER CAREER------")

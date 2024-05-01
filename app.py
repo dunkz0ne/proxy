@@ -7,12 +7,13 @@ app = Flask(__name__)
 
 CORS(app)
 
+# Player
 @app.route('/api/players/<player_id>/career', methods=['GET'])
 def player_career(player_id):
     career = nba.PlayerCareerStats(player_id=player_id)
     return career.get_json()
 
-# Team info
+# Team
 @app.route('/api/teams/<team_id>', methods=['GET'])
 def team_details(team_id):
     team = nba.TeamDetails(team_id=team_id)
