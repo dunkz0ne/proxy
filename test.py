@@ -32,8 +32,8 @@ for team in teams:
     else:
         print(f"Team {team} career stats: \033[91mFAILED\033[0m")
 
-print(f"Player career test: {passed}/{len(players)} passed")
-print("------END TESTING PLAYER CAREER------")
+print(f"Team details test: {passed}/{len(players)} passed")
+print("------END TESTING TEAM DETAILS------")
 
 print("------TESTING TEAM ROSTER------")
 
@@ -49,5 +49,22 @@ for team in teams:
     else:
         print(f"Team {team} roster: \033[91mFAILED\033[0m")
 
-print(f"Player career test: {passed}/{len(players)} passed")
-print("------END TESTING PLAYER CAREER------")
+print(f"Team roster test: {passed}/{len(players)} passed")
+print("------END TESTING TEAM ROSTER------")
+
+print("------TESTING TEAM SCHEDULE------")
+
+teams = ['1610612737', '1610612738', '1610612747', '1610612744', '1610612745']
+passed = 0
+for team in teams:
+    url = f'http://localhost:5000/api/teams/{team}/schedule'
+    response = request('GET', url)
+    data = json.loads(response.text)
+    if int(data['parameters']['TeamID']) == int(team):
+        print(f"Team {team} schedule: \033[92mPASSED\033[0m")
+        passed += 1
+    else:
+        print(f"Team {team} schedule: \033[91mFAILED\033[0m")
+
+print(f"Team schedule test: {passed}/{len(players)} passed")
+print("------END TESTING TEAM SCHDULE------")
