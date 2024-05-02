@@ -2,7 +2,7 @@
     "meta": {
         "version": 1,
         "request": "http://nba.cloud/games/0022000005/boxscorematchups?Format=json",
-        "time": "2024-05-02T03:49:22.4922Z"
+        "time": "2024-05-02T05:25:13.2513Z"
     },
     "boxScoreMatchups": {
         "gameId": "0022000005",
