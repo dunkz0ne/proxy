@@ -54,4 +54,4 @@ def league_leaders():
 
 
 if __name__ == '__main__':
-    app.run("localhost", 5000, debug=True)
+    app.run("localhost")
