@@ -90,3 +90,29 @@ for match in matches:
 
 print(f"Match details test: {passed}/{len(players)} passed")
 print("------END TESTING MATCH DETAILS------")
+
+print("------TESTING LEAGUE STANDINGS------")
+
+url = 'http://localhost:5000/api/league/standings'
+response = request('GET', url)
+data = json.loads(response.text)
+open('json/league-standings.json', 'w').write(json.dumps(data, indent=4))
+if data['parameters']['LeagueID'] == '00':
+    print(f"League standings: \033[92mPASSED\033[0m")
+else:
+    print(f"League standings: \033[91mFAILED\033[0m")
+    
+print("------END TESTING LEAGUE STANDINGS------")
+
+print("------TESTING LEAGUE LEADERS------")
+
+url = 'http://localhost:5000/api/league/leaders'
+response = request('GET', url)
+data = json.loads(response.text)
+open('json/league-leaders.json', 'w').write(json.dumps(data, indent=4))
+if data['parameters']['LeagueID'] == '00':
+    print(f"League leaders: \033[92mPASSED\033[0m")
+else:
+    print(f"League leaders: \033[91mFAILED\033[0m")
+
+print("------END TESTING LEAGUE LEADERS------")

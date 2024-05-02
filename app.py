@@ -30,11 +30,22 @@ def team_schedule(team_id):
     return team.get_json()
 
 # Match
-# Match details
 @app.route('/api/matches/<match_id>', methods=['GET'])
 def match_details(match_id):
     match = nba.BoxScoreMatchupsV3(game_id=match_id)
     return match.get_json()
+
+# League
+@app.route('/api/league/standings', methods=['GET'])
+def league_standings():
+    standings = nba.LeagueStandings()
+    return standings.get_json()
+
+@app.route('/api/league/leaders', methods=['GET'])
+def league_leaders():
+    leaders = nba.LeagueLeaders()
+    return leaders.get_json()
+
 
 if __name__ == '__main__':
     app.run("localhost", 5000, debug=True)
