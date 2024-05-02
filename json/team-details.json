@@ -1,0 +1,347 @@
+{
+    "resource": "teamdetails",
+    "parameters": {
+        "TeamID": 1610612745
+    },
+    "resultSets": [
+        {
+            "name": "TeamBackground",
+            "headers": [
+                "TEAM_ID",
+                "ABBREVIATION",
+                "NICKNAME",
+                "YEARFOUNDED",
+                "CITY",
+                "ARENA",
+                "ARENACAPACITY",
+                "OWNER",
+                "GENERALMANAGER",
+                "HEADCOACH",
+                "DLEAGUEAFFILIATION"
+            ],
+            "rowSet": [
+                [
+                    1610612745,
+                    "HOU",
+                    "Rockets",
+                    1967,
+                    "Houston",
+                    "Toyota Center",
+                    "18104",
+                    "Tilman Fertitta",
+                    "Rafael Stone",
+                    "Ime Udoka",
+                    "Rio Grande Valley Vipers"
+                ]
+            ]
+        },
+        {
+            "name": "TeamHistory",
+            "headers": [
+                "TEAM_ID",
+                "CITY",
+                "NICKNAME",
+                "YEARFOUNDED",
+                "YEARACTIVETILL"
+            ],
+            "rowSet": [
+                [
+                    1610612745,
+                    "Houston",
+                    "Rockets",
+                    1971,
+                    2023
+                ],
+                [
+                    1610612745,
+                    "San Diego",
+                    "Rockets",
+                    1967,
+                    1970
+                ]
+            ]
+        },
+        {
+            "name": "TeamSocialSites",
+            "headers": [
+                "ACCOUNTTYPE",
+                "WEBSITE_LINK"
+            ],
+            "rowSet": [
+                [
+                    "Facebook",
+                    "https://www.facebook.com/houstonrockets"
+                ],
+                [
+                    "Instagram",
+                    "https://instagram.com/houstonrockets"
+                ],
+                [
+                    "Twitter",
+                    "https://twitter.com/HoustonRockets"
+                ]
+            ]
+        },
+        {
+            "name": "TeamAwardsChampionships",
+            "headers": [
+                "YEARAWARDED",
+                "OPPOSITETEAM"
+            ],
+            "rowSet": [
+                [
+                    1994,
+                    "New York Knicks"
+                ],
+                [
+                    1995,
+                    "Orlando Magic"
+                ]
+            ]
+        },
+        {
+            "name": "TeamAwardsConf",
+            "headers": [
+                "YEARAWARDED",
+                "OPPOSITETEAM"
+            ],
+            "rowSet": [
+                [
+                    1981,
+                    null
+                ],
+                [
+                    1986,
+                    null
+                ],
+                [
+                    1994,
+                    null
+                ],
+                [
+                    1995,
+                    null
+                ]
+            ]
+        },
+        {
+            "name": "TeamAwardsDiv",
+            "headers": [
+                "YEARAWARDED",
+                "OPPOSITETEAM"
+            ],
+            "rowSet": [
+                [
+                    1977,
+                    null
+                ],
+                [
+                    1986,
+                    null
+                ],
+                [
+                    1993,
+                    null
+                ],
+                [
+                    1994,
+                    null
+                ],
+                [
+                    2015,
+                    null
+                ],
+                [
+                    2018,
+                    null
+                ],
+                [
+                    2019,
+                    null
+                ],
+                [
+                    2020,
+                    null
+                ]
+            ]
+        },
+        {
+            "name": "TeamHof",
+            "headers": [
+                "PLAYERID",
+                "PLAYER",
+                "POSITION",
+                "JERSEY",
+                "SEASONSWITHTEAM",
+                "YEAR"
+            ],
+            "rowSet": [
+                [
+                    1503,
+                    "Tracy McGrady",
+                    "G-F",
+                    null,
+                    "2004-2010",
+                    2017
+                ],
+                [
+                    2397,
+                    "Yao Ming",
+                    "C",
+                    null,
+                    "2003-2011",
+                    2016
+                ],
+                [
+                    87,
+                    "Dikembe Mutombo",
+                    "C",
+                    null,
+                    "2005-2009",
+                    2015
+                ],
+                [
+                    78055,
+                    "Ralph Sampson",
+                    "C",
+                    null,
+                    "1984-1988",
+                    2012
+                ],
+                [
+                    937,
+                    "Scottie Pippen",
+                    "F",
+                    null,
+                    "1999",
+                    2010
+                ],
+                [
+                    165,
+                    "Hakeem Olajuwon",
+                    "C",
+                    null,
+                    "1985-2001",
+                    2008
+                ],
+                [
+                    787,
+                    "Charles Barkley",
+                    "F",
+                    null,
+                    "1997-2000",
+                    2006
+                ],
+                [
+                    17,
+                    "Clyde Drexler",
+                    "G",
+                    null,
+                    "1995-1998",
+                    2004
+                ],
+                [
+                    77449,
+                    "Moses Malone",
+                    "C",
+                    null,
+                    "1977-1982",
+                    2001
+                ],
+                [
+                    77669,
+                    "Calvin Murphy",
+                    "G",
+                    null,
+                    "1971-1983",
+                    1993
+                ],
+                [
+                    76979,
+                    "Elvin Hayes",
+                    "F",
+                    null,
+                    "1969-1972, 1982-1984",
+                    1990
+                ],
+                [
+                    600013,
+                    "Rick Barry",
+                    "F",
+                    null,
+                    "1979-1980",
+                    1987
+                ]
+            ]
+        },
+        {
+            "name": "TeamRetired",
+            "headers": [
+                "PLAYERID",
+                "PLAYER",
+                "POSITION",
+                "JERSEY",
+                "SEASONSWITHTEAM",
+                "YEAR"
+            ],
+            "rowSet": [
+                [
+                    2397,
+                    "Yao Ming",
+                    "C",
+                    "11",
+                    "2003-2011",
+                    2017
+                ],
+                [
+                    null,
+                    "Carroll Dawson",
+                    "Assistant Coach, General Manager",
+                    "",
+                    "1980-2007",
+                    2007
+                ],
+                [
+                    165,
+                    "Hakeem Olajuwon",
+                    "C",
+                    "34",
+                    "1985-2001",
+                    2002
+                ],
+                [
+                    17,
+                    "Clyde Drexler",
+                    "G",
+                    "22",
+                    "1995-1998",
+                    2000
+                ],
+                [
+                    77449,
+                    "Moses Malone",
+                    "C",
+                    "24",
+                    "1977-1982",
+                    1998
+                ],
+                [
+                    77669,
+                    "Calvin Murphy",
+                    "G",
+                    "23",
+                    "1971-1983",
+                    1984
+                ],
+                [
+                    78350,
+                    "Rudy Tomjanovich",
+                    "F",
+                    "45",
+                    "1971-1981",
+                    1982
+                ]
+            ]
+        }
+    ]
+}

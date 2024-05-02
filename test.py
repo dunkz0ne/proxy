@@ -9,6 +9,7 @@ for player in players:
     url = f'http://localhost:5000/api/players/{player}/career'
     response = request('GET', url)
     data = json.loads(response.text)
+    open('json/player-career.json', 'w').write(json.dumps(data, indent=4))
     if int(data['parameters']['PlayerID']) == int(player):
         print(f"Player {player} career stats: \033[92mPASSED\033[0m")
         passed += 1
@@ -26,6 +27,7 @@ for team in teams:
     url = f'http://localhost:5000/api/teams/{team}'
     response = request('GET', url)
     data = json.loads(response.text)
+    open('json/team-details.json', 'w').write(json.dumps(data, indent=4))
     if int(data['parameters']['TeamID']) == int(team):
         print(f"Team {team} career stats: \033[92mPASSED\033[0m")
         passed += 1
@@ -43,6 +45,7 @@ for team in teams:
     url = f'http://localhost:5000/api/teams/{team}/roster'
     response = request('GET', url)
     data = json.loads(response.text)
+    open('json/team-roster.json', 'w').write(json.dumps(data, indent=4))
     if int(data['parameters']['TeamID']) == int(team):
         print(f"Team {team} roster: \033[92mPASSED\033[0m")
         passed += 1
@@ -60,6 +63,7 @@ for team in teams:
     url = f'http://localhost:5000/api/teams/{team}/schedule'
     response = request('GET', url)
     data = json.loads(response.text)
+    open('json/team-schedule.json', 'w').write(json.dumps(data, indent=4))
     if int(data['parameters']['TeamID']) == int(team):
         print(f"Team {team} schedule: \033[92mPASSED\033[0m")
         passed += 1
@@ -68,3 +72,21 @@ for team in teams:
 
 print(f"Team schedule test: {passed}/{len(players)} passed")
 print("------END TESTING TEAM SCHDULE------")
+
+print("------TESTING MATCH DETAILS------")
+
+matches = ['0022000001', '0022000002', '0022000003', '0022000004', '0022000005']
+passed = 0
+for match in matches:
+    url = f'http://localhost:5000/api/matches/{match}'
+    response = request('GET', url)
+    data = json.loads(response.text)
+    open('json/match-details.json', 'w').write(json.dumps(data, indent=4))
+    if int(data['boxScoreMatchups']['gameId']) == int(match):
+        print(f"Match {match} details: \033[92mPASSED\033[0m")
+        passed += 1
+    else:
+        print(f"Match {match} details: \033[91mFAILED\033[0m")
+
+print(f"Match details test: {passed}/{len(players)} passed")
+print("------END TESTING MATCH DETAILS------")

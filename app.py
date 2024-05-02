@@ -29,5 +29,12 @@ def team_schedule(team_id):
     team = nba.TeamGameLog(team_id=team_id)
     return team.get_json()
 
+# Match
+# Match details
+@app.route('/api/matches/<match_id>', methods=['GET'])
+def match_details(match_id):
+    match = nba.BoxScoreMatchupsV3(game_id=match_id)
+    return match.get_json()
+
 if __name__ == '__main__':
     app.run("localhost", 5000, debug=True)
