@@ -16,5 +16,7 @@ RUN pip install gunicorn
 # Copy the rest of the application code to the working directory
 COPY . .
 
+EXPOSE 443
+
 # Set the entrypoint command to run the WSGI server with HTTP
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:443", "app:app"]
