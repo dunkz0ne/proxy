@@ -16,9 +16,6 @@ RUN pip install gunicorn
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Expose the port on which the Flask app will run
-EXPOSE 5000
-
 
 # Set the entrypoint command to run the WSGI server
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0", "app:app"]
