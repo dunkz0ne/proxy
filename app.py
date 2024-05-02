@@ -35,6 +35,12 @@ def match_details(match_id):
     match = nba.BoxScoreMatchupsV3(game_id=match_id)
     return match.get_json()
 
+# Win Probability
+@app.route('/api/matches/<match_id>/win_probability', methods=['GET'])
+def match_win_probability(match_id):
+    win_probability = nba.WinProbabilityPBP(game_id=match_id)
+    return win_probability.get_json()
+
 # League
 @app.route('/api/league/standings', methods=['GET'])
 def league_standings():

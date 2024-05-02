@@ -91,6 +91,21 @@ for match in matches:
 print(f"Match details test: {passed}/{len(players)} passed")
 print("------END TESTING MATCH DETAILS------")
 
+print("------TESTING MATCH WIN PROBABILITY------")
+
+matches = ['0022000001', '0022000002', '0022000003', '0022000004', '0022000005']
+passed = 0
+for match in matches:
+    url = f'http://localhost:5000/api/matches/{match}/win_probability'
+    response = request('GET', url)
+    data = json.loads(response.text)
+    open('json/match-win-probability.json', 'w').write(json.dumps(data, indent=4))
+    if int(data['parameters']['GameID']) == int(match):
+        print(f"Match {match} win probability: \033[92mPASSED\033[0m")
+        passed += 1
+    else:
+        print(f"Match {match} win probability: \033[91mFAILED\033[0m")
+
 print("------TESTING LEAGUE STANDINGS------")
 
 url = 'http://localhost:5000/api/league/standings'
