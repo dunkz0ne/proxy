@@ -6,7 +6,7 @@ print("------TESTING PLAYER CAREER------")
 players = ['1629029', '2544', '203507', '201142', '203999']
 passed = 0
 for player in players:
-    url = f'http://localhost:3000/api/players/{player}/career'
+    url = f'http://localhost:5001/api/players/{player}/career'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/player-career.json', 'w').write(json.dumps(data, indent=4))
@@ -24,7 +24,7 @@ print("------TESTING TEAM DETAILS------")
 teams = ['1610612737', '1610612738', '1610612747', '1610612744', '1610612745']
 passed = 0
 for team in teams:
-    url = f'http://localhost:3000/api/teams/{team}'
+    url = f'http://localhost:5001/api/teams/{team}'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/team-details.json', 'w').write(json.dumps(data, indent=4))
@@ -42,7 +42,7 @@ print("------TESTING TEAM ROSTER------")
 teams = ['1610612737', '1610612738', '1610612747', '1610612744', '1610612745']
 passed = 0
 for team in teams:
-    url = f'http://localhost:3000/api/teams/{team}/roster'
+    url = f'http://localhost:5001/api/teams/{team}/roster'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/team-roster.json', 'w').write(json.dumps(data, indent=4))
@@ -60,7 +60,7 @@ print("------TESTING TEAM SCHEDULE------")
 teams = ['1610612737', '1610612738', '1610612747', '1610612744', '1610612745']
 passed = 0
 for team in teams:
-    url = f'http://localhost:3000/api/teams/{team}/schedule'
+    url = f'http://localhost:5001/api/teams/{team}/schedule'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/team-schedule.json', 'w').write(json.dumps(data, indent=4))
@@ -78,7 +78,7 @@ print("------TESTING MATCH DETAILS------")
 matches = ['0022000001', '0022000002', '0022000003', '0022000004', '0022000005']
 passed = 0
 for match in matches:
-    url = f'http://localhost:3000/api/matches/{match}'
+    url = f'http://localhost:5001/api/matches/{match}'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/match-details.json', 'w').write(json.dumps(data, indent=4))
@@ -96,7 +96,7 @@ print("------TESTING MATCH WIN PROBABILITY------")
 matches = ['0022000001', '0022000002', '0022000003', '0022000004', '0022000005']
 passed = 0
 for match in matches:
-    url = f'http://localhost:3000/api/matches/{match}/win_probability'
+    url = f'http://localhost:5001/api/matches/{match}/win_probability'
     response = request('GET', url)
     data = json.loads(response.text)
     open('json/match-win-probability.json', 'w').write(json.dumps(data, indent=4))
@@ -108,7 +108,7 @@ for match in matches:
 
 print("------TESTING LEAGUE STANDINGS------")
 
-url = 'http://localhost:3000/api/league/standings'
+url = 'http://localhost:5001/api/league/standings'
 response = request('GET', url)
 data = json.loads(response.text)
 open('json/league-standings.json', 'w').write(json.dumps(data, indent=4))
@@ -121,7 +121,7 @@ print("------END TESTING LEAGUE STANDINGS------")
 
 print("------TESTING LEAGUE LEADERS------")
 
-url = 'http://localhost:3000/api/league/leaders'
+url = 'http://localhost:5001/api/league/leaders'
 response = request('GET', url)
 data = json.loads(response.text)
 open('json/league-leaders.json', 'w').write(json.dumps(data, indent=4))
