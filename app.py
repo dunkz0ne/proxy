@@ -13,6 +13,11 @@ def player_career(player_id):
     career = nba.PlayerCareerStats(player_id=player_id)
     return career.get_json()
 
+@app.route('/api/players/<player_id>/profile', methods=['GET'])
+def player_profile(player_id):
+    profile = nba.CommonPlayerInfo(player_id=player_id)
+    return profile.get_json()
+
 # Team
 @app.route('/api/teams/<team_id>', methods=['GET'])
 def team_details(team_id):
