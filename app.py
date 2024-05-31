@@ -29,15 +29,27 @@ def team_roster(team_id):
     team = nba.CommonTeamRoster(team_id=team_id)
     return team.get_json()
 
-@app.route('/api/teams/<team_id>/schedule', methods=['GET'])
-def team_schedule(team_id):
-    team = nba.TeamGameLog(team_id=team_id)
+@app.route('/api/teams/<team_id>/schedule/regular', methods=['GET'])
+def team_schedule_regular(team_id):
+    team = nba.TeamGameLog(season='2023-24', team_id=team_id, season_type_all_star='Regular Season')
     return team.get_json()
+
+@app.route('/api/teams/<team_id>/schedule/playoffs', methods=['GET'])
+def team_schedule_playoffs(team_id):
+    team = nba.TeamGameLog(season='2023-24', team_id=team_id, season_type_all_star='Playoffs')
+    return team.get_json()
+
+
+
+@app.route('/api/matches/upcoming', methods=['GET'])
+def upcoming_matches():
+    matches = nba.ScoreboardV2()
+    return matches.get_json()
 
 # Match
 @app.route('/api/matches/<match_id>', methods=['GET'])
 def match_details(match_id):
-    match = nba.BoxScoreMatchupsV3(game_id=match_id)
+    match = nba.BoxScoreSummaryV2(game_id=match_id)
     return match.get_json()
 
 # Win Probability
